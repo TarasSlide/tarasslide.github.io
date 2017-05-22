@@ -1,0 +1,247 @@
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: #fff;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+.calendar-container {
+    width: 1100px;
+    margin: auto;
+}
+
+.calendar {
+    border-bottom: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+    width: 100%;
+}
+
+.day {
+    border-top: 1px solid #d6d6d6;
+    border-left: 1px solid #d6d6d6;
+    min-height: 100px;
+    transition: background-color .3s linear;
+}
+
+.day:hover {
+    background-color: #fef6f4;
+}
+
+.day-head-wrap {
+    padding: 10px;
+    border: none;
+    text-align: left;
+    font-weight: 100;
+}
+
+.day .day-wrap {
+    min-height: 120px;
+    min-width: 150px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.add-event [type="text"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+    display: block;
+    z-index: 2;
+}
+
+.add-event {
+    position: absolute;
+    bottom: -215px;
+    left: -150px;
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 2;
+    border: 1px solid #aeaeae;
+    border-radius: 3px;
+}
+
+.close {
+    font-size: 35px;
+    float: right;
+    color: #999;
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.btn, .primary-btn, .default-btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 300;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.primary-btn {
+    background-color: #488fff;
+    color: #fff;
+    border: 1px solid #2351ff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.default-btn {
+    background-color: #f2f2f2;
+    color: #595959;
+    border: 1px solid #d6d6d6;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-link {
+    background-color: transparent;
+    color: #3e5bc3;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.task-title {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.create-event-btn {
+    float: right;
+}
+
+.note {
+    margin-bottom: 20px;
+    min-width: 360px;
+}
+
+.day > .head {
+    min-height: auto;
+}
+
+.day.adj-month {
+    opacity: .3;
+}
+
+.current-day {
+    background-color: #f1f1f1;
+    border: 1px solid #afafaf;
+}
+
+.event-date {
+    margin: 10px 0;
+}
+
+.calendar-item {
+    display: block;
+    padding: 3px;
+    background-color: #99c6ee;
+    border: 1px solid #6297aa;
+    font-size: 12px;
+}
+
+.add-event .date-edit-input {
+    width: 100px;
+    padding: 1px;
+    display: block;
+    font-size: 12px;
+    line-height: 10px;
+    margin: 10px 0;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 1.95em;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: .2em;
+    left: .2em;
+    font-size: 1.1em;
+    line-height: 0.8;
+    color: #456ead;
+    transition: all .2s;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+}
+
+[type="checkbox"]:disabled:checked + label:after {
+    color: #999;
+}
+
+[type="checkbox"]:disabled + label {
+    color: #aaa;
+}
